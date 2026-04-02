@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+build/
+
+# Environment & secrets
+.env
+.env.*
+*.pem
+
+# IDE & editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Electron
+release/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Claude workspace
+.claude/
