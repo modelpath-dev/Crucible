@@ -18,7 +18,11 @@ const LANGUAGE_MAP: Record<string, string> = {
 };
 
 function getLanguage(filePath: string): string {
-  const ext = '.' + filePath.split('.').pop()?.toLowerCase();
+  const fileName = filePath.split(/[/\\]/).pop() || '';
+  if (fileName === 'Dockerfile' || fileName.startsWith('Dockerfile.')) return 'dockerfile';
+  if (fileName === 'Makefile' || fileName === 'GNUmakefile') return 'makefile';
+  if (fileName === '.gitignore' || fileName === '.dockerignore') return 'ignore';
+  const ext = '.' + fileName.split('.').pop()?.toLowerCase();
   return LANGUAGE_MAP[ext] || 'plaintext';
 }
 
