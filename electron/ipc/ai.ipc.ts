@@ -48,6 +48,18 @@ export function registerAiHandlers(window: BrowserWindow) {
       return;
     }
 
+    const provider = PROVIDERS.find(p => p.id === request.provider);
+    if (!provider) {
+      window.webContents.send(AI_CHANNELS.CHAT_ERROR, { error: `Unknown provider: ${request.provider}` });
+      return;
+    }
+
+    const model = provider.models.find(m => m.id === request.model);
+    if (!model) {
+      window.webContents.send(AI_CHANNELS.CHAT_ERROR, { error: `Model not found: ${request.model}` });
+      return;
+    }
+
     activeAbortController = new AbortController();
     const { signal } = activeAbortController;
 
