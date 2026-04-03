@@ -70,11 +70,7 @@ export const useGitStore = create<GitState>((set, get) => ({
   },
 
   unstageFiles: async (cwd, files) => {
-    // git reset HEAD -- files (via diff --staged trick)
-    // simple-git doesn't have a direct unstage, use raw
-    for (const file of files) {
-      await window.crucible.git.diff(cwd, file); // trigger refresh
-    }
+    await window.crucible.git.raw(cwd, ['reset', 'HEAD', '--', ...files]);
     await get().refreshStatus(cwd);
   },
 
