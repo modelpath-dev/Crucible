@@ -134,11 +134,19 @@ export interface AIContext {
   projectRoot?: string;
 }
 
+export interface AIError {
+  message: string;
+  code?: string;
+  status?: number;
+  retryable?: boolean;
+}
+
 export interface AIStreamChunk {
   type: 'text' | 'tool_call' | 'done' | 'error';
   content?: string;
   toolCall?: AIToolCall;
   error?: string;
+  errorDetail?: AIError;
   usage?: { promptTokens: number; completionTokens: number };
 }
 
