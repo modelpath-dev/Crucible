@@ -11,14 +11,15 @@ const PROVIDERS: AIProvider[] = [
     name: 'OpenAI',
     models: [
       { id: 'gpt-4o', name: 'GPT-4o', maxTokens: 128000, supportsVision: true, supportsFunctionCalling: true },
+      { id: 'gpt-4o-mini', name: 'GPT-4o Mini', maxTokens: 128000, supportsVision: true, supportsFunctionCalling: true },
       { id: 'gpt-4-turbo', name: 'GPT-4 Turbo', maxTokens: 128000, supportsVision: true, supportsFunctionCalling: true },
-      { id: 'gpt-3.5-turbo', name: 'GPT-3.5 Turbo', maxTokens: 16385, supportsVision: false, supportsFunctionCalling: true },
     ],
   },
   {
     id: 'claude',
     name: 'Anthropic Claude',
     models: [
+      { id: 'claude-opus-4-20250514', name: 'Claude Opus 4', maxTokens: 200000, supportsVision: true, supportsFunctionCalling: true },
       { id: 'claude-sonnet-4-20250514', name: 'Claude Sonnet 4', maxTokens: 200000, supportsVision: true, supportsFunctionCalling: true },
       { id: 'claude-haiku-4-5-20251001', name: 'Claude Haiku 4.5', maxTokens: 200000, supportsVision: true, supportsFunctionCalling: true },
     ],
