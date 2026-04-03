@@ -11,6 +11,10 @@ const LANGUAGE_MAP: Record<string, string> = {
   '.toml': 'toml', '.ini': 'ini', '.env': 'plaintext', '.txt': 'plaintext',
   '.svelte': 'svelte', '.vue': 'vue', '.dart': 'dart', '.swift': 'swift',
   '.kt': 'kotlin', '.lua': 'lua', '.r': 'r', '.R': 'r',
+  '.dockerfile': 'dockerfile', '.graphql': 'graphql', '.gql': 'graphql',
+  '.proto': 'protobuf', '.tf': 'hcl', '.zig': 'zig', '.ex': 'elixir',
+  '.exs': 'elixir', '.erl': 'erlang', '.clj': 'clojure', '.scala': 'scala',
+  '.cs': 'csharp', '.fs': 'fsharp', '.ps1': 'powershell', '.bat': 'bat',
 };
 
 function getLanguage(filePath: string): string {
