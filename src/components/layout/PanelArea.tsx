@@ -71,10 +71,14 @@ export function PanelArea({ height, onResize, onClose }: Props) {
       <div className="flex-1 overflow-hidden">
         {activeTab === 'terminal' && <TerminalPanel />}
         {activeTab === 'output' && (
-          <div className="p-2 text-xs text-crucible-text-secondary">No output</div>
+          <div className="flex items-center justify-center h-full text-xs text-crucible-text-secondary">
+            <span>Output from tasks and extensions will appear here</span>
+          </div>
         )}
         {activeTab === 'problems' && (
-          <div className="p-2 text-xs text-crucible-text-secondary">No problems detected</div>
+          <div className="flex items-center justify-center h-full text-xs text-crucible-text-secondary">
+            <span>No problems have been detected in the workspace</span>
+          </div>
         )}
       </div>
     </div>
