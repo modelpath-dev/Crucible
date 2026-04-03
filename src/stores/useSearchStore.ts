@@ -13,7 +13,7 @@ interface SearchState {
   };
 
   setQuery: (query: string) => void;
-  setOption: (key: string, value: any) => void;
+  setOption: (key: keyof SearchState['options'], value: string | boolean) => void;
   searchContent: (cwd: string) => Promise<void>;
   searchFiles: (cwd: string, query: string) => Promise<void>;
   clear: () => void;
