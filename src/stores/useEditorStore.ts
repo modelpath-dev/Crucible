@@ -41,6 +41,8 @@ interface EditorState {
   saveFile: (id: string) => Promise<void>;
   saveActiveFile: () => Promise<void>;
   markClean: (id: string) => void;
+  closeAllTabs: () => void;
+  closeOtherTabs: (id: string) => void;
 }
 
 export const useEditorStore = create<EditorState>((set, get) => ({
@@ -115,6 +117,17 @@ export const useEditorStore = create<EditorState>((set, get) => ({
   markClean: (id: string) => {
     set(state => ({
       tabs: state.tabs.map(t => t.id === id ? { ...t, isDirty: false } : t),
+    }));
+  },
+
+  closeAllTabs: () => {
+    set({ tabs: [], activeTabId: null });
+  },
+
+  closeOtherTabs: (id: string) => {
+    set(state => ({
+      tabs: state.tabs.filter(t => t.id === id),
+      activeTabId: id,
     }));
   },
 }));
