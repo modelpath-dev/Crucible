@@ -151,6 +151,7 @@ export function AIPanel() {
           <div className="p-4 text-center text-xs text-crucible-text-secondary">
             <p className="mb-2">Ask me anything about your code!</p>
             <p className="opacity-50">I can read files, write code, run commands, and search your codebase.</p>
+            <p className="opacity-40 mt-2 text-[10px]">Shift+Enter for newlines</p>
           </div>
         )}
         {messages.map(msg => (
