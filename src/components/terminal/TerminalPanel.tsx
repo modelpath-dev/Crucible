@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { useFileTreeStore } from '../../stores/useFileTreeStore';
+import { useSettingsStore } from '../../stores/useSettingsStore';
 
 export function TerminalPanel() {
   const termRef = useRef<HTMLDivElement>(null);
@@ -7,6 +8,7 @@ export function TerminalPanel() {
   const fitAddonRef = useRef<any>(null);
   const [termId] = useState(() => crypto.randomUUID());
   const rootPath = useFileTreeStore(s => s.rootPath);
+  const terminalFontSize = useSettingsStore(s => s.settings.terminalFontSize);
   const [initialized, setInitialized] = useState(false);
 
   const initTerminal = useCallback(async () => {
@@ -25,7 +27,7 @@ export function TerminalPanel() {
       const fitAddon = new FitAddon();
       const term = new Terminal({
         cursorBlink: true,
-        fontSize: 13,
+        fontSize: terminalFontSize,
         fontFamily: 'JetBrains Mono, Fira Code, monospace',
         theme: {
           background: '#11111b',
