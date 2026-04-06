@@ -38,6 +38,7 @@ export function StatusBar({ onTogglePanel }: Props) {
       {/* Editor info */}
       {activeTab && (
         <>
+          <span>Ln {activeTab.content.split('\n').length}</span>
           <span>{activeTab.language}</span>
           <span>UTF-8</span>
         </>
