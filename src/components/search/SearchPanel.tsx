@@ -14,7 +14,11 @@ export function SearchPanel() {
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'Enter') handleSearch();
-  }, [handleSearch]);
+    if (e.key === 'Escape') {
+      setQuery('');
+      clear();
+    }
+  }, [handleSearch, setQuery, clear]);
 
   // Group results by file
   const grouped = results.reduce((acc, r) => {
@@ -52,6 +56,15 @@ export function SearchPanel() {
               className="rounded"
             />
             Case
+          </label>
+          <label className="flex items-center gap-1 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={options.wholeWord || false}
+              onChange={e => setOption('wholeWord', e.target.checked)}
+              className="rounded"
+            />
+            Word
           </label>
         </div>
       </div>
