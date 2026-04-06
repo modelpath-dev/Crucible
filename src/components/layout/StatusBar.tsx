@@ -33,7 +33,7 @@ export function StatusBar({ onTogglePanel }: Props) {
       {isStreaming && (
         <span className="text-crucible-accent animate-pulse">AI generating...</span>
       )}
-      <span>{selectedProvider}</span>
+      <span className="capitalize">{selectedProvider}</span>
 
       {/* Editor info */}
       {activeTab && (
