@@ -1,6 +1,6 @@
 {
   "name": "crucible",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Crucible IDE - AI-powered desktop code editor",
   "main": "dist/electron/electron/main.js",
   "scripts": {
