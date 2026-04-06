@@ -15,6 +15,9 @@ const LANGUAGE_MAP: Record<string, string> = {
   '.proto': 'protobuf', '.tf': 'hcl', '.zig': 'zig', '.ex': 'elixir',
   '.exs': 'elixir', '.erl': 'erlang', '.clj': 'clojure', '.scala': 'scala',
   '.cs': 'csharp', '.fs': 'fsharp', '.ps1': 'powershell', '.bat': 'bat',
+  '.m': 'objective-c', '.mm': 'objective-cpp', '.pl': 'perl', '.pm': 'perl',
+  '.coffee': 'coffeescript', '.hbs': 'handlebars', '.pug': 'pug',
+  '.v': 'verilog', '.sv': 'systemverilog', '.wasm': 'wat',
 };
 
 function getLanguage(filePath: string): string {
