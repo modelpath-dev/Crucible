@@ -2,7 +2,7 @@ import React from 'react';
 import { useEditorStore } from '../../stores/useEditorStore';
 
 export function EditorTabs() {
-  const { tabs, activeTabId, setActiveTab, closeTab } = useEditorStore();
+  const { tabs, activeTabId, setActiveTab, closeTab, closeOtherTabs, closeAllTabs } = useEditorStore();
 
   return (
     <div className="flex bg-crucible-sidebar border-b border-crucible-border overflow-x-auto min-h-[35px]">
@@ -20,6 +20,7 @@ export function EditorTabs() {
           {tab.isDirty && <span className="text-crucible-accent text-lg leading-none">●</span>}
           <button
             onClick={(e) => { e.stopPropagation(); closeTab(tab.id); }}
+            onDoubleClick={(e) => { e.stopPropagation(); closeAllTabs(); }}
             className="ml-1 text-crucible-text-secondary hover:text-crucible-text opacity-0 group-hover:opacity-100 hover:bg-crucible-hover rounded w-4 h-4 flex items-center justify-center text-xs"
             style={{ opacity: tab.id === activeTabId ? 1 : undefined }}
           >
