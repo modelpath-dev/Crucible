@@ -181,6 +181,7 @@ export interface CrucibleSettings {
   autoSaveDelay: number;
   cursorBlinking: 'blink' | 'smooth' | 'phase' | 'expand' | 'solid';
   renderWhitespace: 'none' | 'boundary' | 'selection' | 'trailing' | 'all';
+  scrollBeyondLastLine: boolean;
 }
 
 export const DEFAULT_SETTINGS: CrucibleSettings = {
@@ -198,6 +199,7 @@ export const DEFAULT_SETTINGS: CrucibleSettings = {
   autoSaveDelay: 1000,
   cursorBlinking: 'blink',
   renderWhitespace: 'selection',
+  scrollBeyondLastLine: false,
 };
 
 // Terminal
