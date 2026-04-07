@@ -6,6 +6,7 @@ const SETTING_BOUNDS: Partial<Record<keyof CrucibleSettings, { min: number; max:
   terminalFontSize: { min: 8, max: 32 },
   tabSize: { min: 1, max: 8 },
   autoSaveDelay: { min: 200, max: 10000 },
+  lineHeight: { min: 12, max: 48 },
 };
 
 function clampSetting<K extends keyof CrucibleSettings>(key: K, value: CrucibleSettings[K]): CrucibleSettings[K] {

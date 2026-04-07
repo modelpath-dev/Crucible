@@ -182,6 +182,7 @@ export interface CrucibleSettings {
   cursorBlinking: 'blink' | 'smooth' | 'phase' | 'expand' | 'solid';
   renderWhitespace: 'none' | 'boundary' | 'selection' | 'trailing' | 'all';
   scrollBeyondLastLine: boolean;
+  lineHeight: number;
 }
 
 export const DEFAULT_SETTINGS: CrucibleSettings = {
@@ -200,6 +201,7 @@ export const DEFAULT_SETTINGS: CrucibleSettings = {
   cursorBlinking: 'blink',
   renderWhitespace: 'selection',
   scrollBeyondLastLine: false,
+  lineHeight: 20,
 };
 
 // Terminal
