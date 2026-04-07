@@ -179,6 +179,7 @@ export interface CrucibleSettings {
   terminalFontSize: number;
   autoSave: boolean;
   autoSaveDelay: number;
+  cursorBlinking: 'blink' | 'smooth' | 'phase' | 'expand' | 'solid';
 }
 
 export const DEFAULT_SETTINGS: CrucibleSettings = {
@@ -194,6 +195,7 @@ export const DEFAULT_SETTINGS: CrucibleSettings = {
   terminalFontSize: 13,
   autoSave: false,
   autoSaveDelay: 1000,
+  cursorBlinking: 'blink',
 };
 
 // Terminal
