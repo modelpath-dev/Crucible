@@ -180,6 +180,7 @@ export interface CrucibleSettings {
   autoSave: boolean;
   autoSaveDelay: number;
   cursorBlinking: 'blink' | 'smooth' | 'phase' | 'expand' | 'solid';
+  renderWhitespace: 'none' | 'boundary' | 'selection' | 'trailing' | 'all';
 }
 
 export const DEFAULT_SETTINGS: CrucibleSettings = {
@@ -196,6 +197,7 @@ export const DEFAULT_SETTINGS: CrucibleSettings = {
   autoSave: false,
   autoSaveDelay: 1000,
   cursorBlinking: 'blink',
+  renderWhitespace: 'selection',
 };
 
 // Terminal
