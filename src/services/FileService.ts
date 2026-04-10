@@ -1,4 +1,4 @@
-// Thin wrapper around IPC for file operations
+
 export const FileService = {
   async readDir(path: string) {
     return window.crucible.fs.readDir(path);
